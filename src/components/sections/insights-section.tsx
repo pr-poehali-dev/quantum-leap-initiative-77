@@ -5,24 +5,24 @@ import { ArrowRight } from "lucide-react"
 
 const articles = [
   {
-    title: "Искусство визуального сторителлинга",
-    category: "Дизайн",
-    image: "/visual-storytelling-design-article.jpg",
+    title: "Как собрать капсульный гардероб с нуля",
+    category: "Стиль",
+    image: "https://cdn.poehali.dev/projects/e3f47e23-c593-417b-a593-3e8f9c039f63/files/cbb4344c-3ece-4f61-9e30-ff1133c02468.jpg",
   },
   {
-    title: "Как создать личный бренд онлайн",
-    category: "Стратегия",
-    image: "/personal-branding-digital-marketing.jpg",
+    title: "5 образов на каждый день этой осенью",
+    category: "Тренды",
+    image: "https://cdn.poehali.dev/projects/e3f47e23-c593-417b-a593-3e8f9c039f63/files/179d4b99-0c79-45a8-85ca-c814dd545c8e.jpg",
   },
   {
-    title: "Тренды типографики 2025",
-    category: "Типографика",
-    image: "/typography-trends-modern-fonts.jpg",
-  },
-  {
-    title: "Минимализм в дизайне портфолио",
+    title: "Как найти свой стиль и не потеряться",
     category: "Вдохновение",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "https://cdn.poehali.dev/projects/e3f47e23-c593-417b-a593-3e8f9c039f63/files/c7c9b76e-bbd9-481c-83af-0df8546dbbed.jpg",
+  },
+  {
+    title: "Главные цвета сезона: что носить",
+    category: "Тренды",
+    image: "https://cdn.poehali.dev/projects/e3f47e23-c593-417b-a593-3e8f9c039f63/files/6359a912-b1d1-4eb0-9c68-7b84d08e4177.jpg",
   },
 ]
 
@@ -43,7 +43,7 @@ export function InsightsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Статьи
+          Блог о моде
         </motion.p>
 
         <div className="divide-y divide-border">
@@ -72,11 +72,10 @@ export function InsightsSection() {
           ))}
         </div>
 
-        {/* Floating hover image */}
         <AnimatePresence>
           {hoveredIndex !== null && (
             <motion.div
-              className="fixed pointer-events-none z-50 w-[200px] md:w-[300px] rounded-lg overflow-hidden shadow-2xl hidden md:block"
+              className="fixed pointer-events-none z-50 w-[200px] md:w-[280px] rounded-lg overflow-hidden shadow-2xl hidden md:block"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{
                 opacity: 1,
@@ -88,9 +87,9 @@ export function InsightsSection() {
               transition={{ duration: 0.2 }}
             >
               <img
-                src={articles[hoveredIndex].image || "/placeholder.svg"}
+                src={articles[hoveredIndex].image}
                 alt={articles[hoveredIndex].title}
-                className="w-full h-auto"
+                className="w-full h-[200px] object-cover"
               />
             </motion.div>
           )}

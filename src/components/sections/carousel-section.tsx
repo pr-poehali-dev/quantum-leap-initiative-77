@@ -1,17 +1,14 @@
 import { motion } from "framer-motion"
 
-const portfolioItems = [
-  "/portfolio-website-design-preview-modern.jpg",
-  "/photography-portfolio-website-clean.jpg",
-  "/architecture-firm-website-minimal.jpg",
-  "/design-agency-portfolio-dark-theme.jpg",
-  "/artist-portfolio-website-creative.jpg",
-  "/writer-portfolio-website-elegant.jpg",
+const carouselItems = [
+  "https://cdn.poehali.dev/projects/e3f47e23-c593-417b-a593-3e8f9c039f63/files/c7c9b76e-bbd9-481c-83af-0df8546dbbed.jpg",
+  "https://cdn.poehali.dev/projects/e3f47e23-c593-417b-a593-3e8f9c039f63/files/179d4b99-0c79-45a8-85ca-c814dd545c8e.jpg",
+  "https://cdn.poehali.dev/projects/e3f47e23-c593-417b-a593-3e8f9c039f63/files/cbb4344c-3ece-4f61-9e30-ff1133c02468.jpg",
+  "https://cdn.poehali.dev/projects/e3f47e23-c593-417b-a593-3e8f9c039f63/files/6359a912-b1d1-4eb0-9c68-7b84d08e4177.jpg",
 ]
 
 export function CarouselSection() {
-  // Duplicate for seamless loop
-  const items = [...portfolioItems, ...portfolioItems]
+  const items = [...carouselItems, ...carouselItems]
 
   return (
     <section className="bg-primary py-24 overflow-hidden">
@@ -22,7 +19,7 @@ export function CarouselSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Создано авторами для авторов.
+          Создано для девушек, которые любят стиль.
         </motion.h2>
       </div>
 
@@ -39,13 +36,13 @@ export function CarouselSection() {
           {items.map((src, i) => (
             <div
               key={i}
-              className="flex-shrink-0 w-[300px] md:w-[400px] rounded-xl overflow-hidden shadow-2xl"
+              className="flex-shrink-0 w-[260px] md:w-[360px] h-[320px] md:h-[440px] rounded-xl overflow-hidden shadow-2xl"
               data-clickable
             >
               <img
-                src={src || "/placeholder.svg"}
-                alt={`Пример портфолио ${(i % portfolioItems.length) + 1}`}
-                className="w-full h-auto"
+                src={src}
+                alt={`Образ ${(i % carouselItems.length) + 1}`}
+                className="w-full h-full object-cover"
               />
             </div>
           ))}

@@ -3,18 +3,24 @@ import { Check } from "lucide-react"
 
 const plans = [
   {
-    name: "Старт",
-    price: "1 200",
-    period: " руб/мес",
-    description: "Для личного портфолио",
-    features: ["5 страниц", "Свой домен", "Базовая аналитика", "Поддержка по email"],
+    name: "Базовый",
+    price: "от 1 500",
+    period: " руб",
+    description: "Для первого заказа",
+    features: ["Бесплатная примерка", "Возврат в течение 14 дней", "Доставка по России", "Помощь стилиста онлайн"],
   },
   {
-    name: "Про",
-    price: "2 900",
+    name: "Подписка",
+    price: "2 490",
     period: " руб/мес",
-    description: "Для растущих авторов",
-    features: ["Безлимит страниц", "Приоритет поддержки", "Расширенная аналитика", "Свой брендинг", "Работа в команде"],
+    description: "Для модниц с характером",
+    features: [
+      "Новинки раньше всех",
+      "Скидка 15% на все заказы",
+      "Бесплатная доставка всегда",
+      "Личный стилист",
+      "Эксклюзивные коллекции",
+    ],
     popular: true,
   },
 ]
@@ -29,8 +35,8 @@ export function PricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-5xl font-serif text-foreground">Простые и понятные цены</h2>
-          <p className="text-muted-foreground mt-4 max-w-md mx-auto">Начните бесплатно, платите когда готовы.</p>
+          <h2 className="text-3xl md:text-5xl font-serif text-foreground">Выгодно и стильно</h2>
+          <p className="text-muted-foreground mt-4 max-w-md mx-auto">Выбери формат, который подходит именно тебе.</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
@@ -75,7 +81,7 @@ export function PricingSection() {
                     : "bg-secondary text-foreground hover:bg-accent/30"
                 }`}
               >
-                Начать
+                Выбрать
               </button>
             </motion.div>
           ))}
